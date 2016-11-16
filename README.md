@@ -74,7 +74,7 @@ import 'babel-polyfill';
 import Vue from 'vue';
 import myCityPicker from 'vue-city-picker';
 
-//注册一个城市列表全局变量（考虑到cityList会比较大，单独为一个js文件比较好）
+//注册一个城市列表全局变量（考虑到cityList会比较大，如项目中多次使用，单独为一个js文件比较好）
 window.CITY_PICKER_LIST = cityList;
 
 new Vue({

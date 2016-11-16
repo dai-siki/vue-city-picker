@@ -14,7 +14,7 @@ const $ = require('gulp-load-plugins')(),
  -------------------------------------------------------------*/
 
 gulp.task('css', function() {
-	gulp.src('./scss/*.scss').pipe($.sass()).pipe($.autoprefixer('last 10 version')).pipe(gulp.dest('./'));
+	// gulp.src('./scss/*.scss').pipe($.sass()).pipe($.autoprefixer('last 10 version')).pipe(gulp.dest('./'));
 });
 
 // jS task
