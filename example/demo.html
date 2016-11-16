@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+	<style media="screen">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			padding: 50px;
+		}
+
+		#app label {
+			display: block;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+		<label for="city">选择出发城市</label>
+		<city-picker field="city" placeholder="选择日期" :value.sync="cityId"></city-picker>
+	</div>
+
+	<script src="demo-src.js"></script>
+</body>
+
+</html>
