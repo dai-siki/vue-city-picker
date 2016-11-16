@@ -90,3 +90,100 @@ new Vue({
 </script>
 
 ```
+
+#### 附：根据数据库生成指定格式cityList的json文件（php参考示例，数据库表至少有id、name、show(首字母)、parent_id(父级id)）
+
+```php
+<?php
+
+$db_conf = [
+    'host' => '127.0.0.1',
+    'username' => 'root',
+    'password' => '123456',
+    'dbname' => 'city',
+    'charset' => 'utf8'
+];
+
+//查询数据库得到数据
+$db = mysqli_connect($db_conf['host'], $db_conf['username'], $db_conf['password'], $db_conf['dbname']);
+if (!$db) {
+	die('---------- mysql connect false ---------');
+}
+mysqli_set_charset($db, "utf8");
+$result = mysqli_query($db, 'SELECT * FROM city');
+
+//城市picker数据
+$cityPickerJsonData = [
+	'hot' => []
+];
+// 热门城市列表
+$hotCity = [
+	"北京",
+	"上海",
+	"广州",
+	"深圳",
+	"成都",
+	"重庆",
+	"杭州",
+	"南京",
+	"沈阳",
+	"苏州",
+	"天津",
+	"武汉",
+	"西安",
+	"长沙",
+	"大连",
+	"济南",
+	"宁波",
+	"青岛",
+	"无锡",
+	"厦门",
+	"郑州",
+	"长春",
+	"常州",
+	"哈尔滨",
+	"福州",
+	"昆明",
+	"合肥",
+	"东莞",
+	"石家庄",
+	"呼和浩特",
+	"南昌",
+	"温州",
+	"佛山",
+	"贵阳",
+	"南宁"
+];
+while ($row = mysqli_fetch_array($result)) {
+	// 城市picker数据处理
+	if($row['parent_id'] >= 1 && $row['parent_id'] <= 34){ //父级为省
+		$initial = $row['show'];
+		if(!isset($cityPickerJsonData[$initial])){
+			$cityPickerJsonData[$initial] = [];
+		}
+		array_push($cityPickerJsonData[$initial], array(
+			'id' => $row['id'],
+			'name' => $row['name']
+		));
+		if(in_array($row['name'], $hotCity)){
+			array_push($cityPickerJsonData['hot'], [
+				'id' => $row['id'],
+				'name' => $row['name']
+			]);
+		}
+	}
+}
+mysqli_close($db);
+
+//编译json写入文件
+ksort($cityPickerJsonData);
+$cityPickerJson = json_encode($cityPickerJsonData);
+$cityPickerJsonFile = fopen('./city-picker-list.json', 'w');
+fwrite($cityPickerJsonFile, $cityPickerJson);
+fclose($cityPickerJsonFile);
+
+
+echo '--------- success ---------';
+?>
+
+```
