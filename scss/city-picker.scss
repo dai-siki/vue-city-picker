@@ -67,6 +67,10 @@ $c1: #d0000e;
 					border-left: none;
 				}
 
+				&:hover {
+					color: $c1;
+				}
+
 				&.z-on {
 					background-color: $c1;
 					color: #fff;
@@ -104,6 +108,10 @@ $c1: #d0000e;
 						overflow: hidden;
 						text-overflow: ellipsis;
 						white-space: nowrap;
+
+						&:hover {
+							color: $c1;
+						}
 					}
 				}
 
