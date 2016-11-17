@@ -25,7 +25,7 @@ vue城市选择组件（按城市首字母排序）
 基于 vue.js@1.0+ 版本，模块使用es6编写（需babel转译），css使用scss编译（需scss-loader转译）。
 
 ## 城市列表数据源
-[china-city-data](http://dai-siki.github.io/vue-city-picker/example/demo.html).
+[china-city-data](https://github.com/dai-siki/china-city-data).
 
 当然你可以使用自己的数据，格式与此相符即可，该组件最终需要的是一个名为“CITY_PICKER_LIST”的全局变量。
 
