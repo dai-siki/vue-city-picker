@@ -1,6 +1,6 @@
 {
   "name": "vue-city-picker",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "vue城市选择组件（按城市首字母排序）",
   "main": "city-picker.vue",
   "scripts": {
@@ -36,6 +36,7 @@
     "babel-preset-stage-2": "^6.17.0",
     "babel-preset-stage-3": "^6.17.0",
     "browser-sync": "^2.13.0",
+    "china-city-data": "^1.0.1",
     "classnames": "^2.2.5",
     "css-loader": "^0.23.1",
     "gulp": "^3.8.8",

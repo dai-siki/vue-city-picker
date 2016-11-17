@@ -24,13 +24,18 @@ vue城市选择组件（按城市首字母排序）
 
 基于 vue.js@1.0+ 版本，模块使用es6编写（需babel转译），css使用scss编译（需scss-loader转译）。
 
+## 城市列表数据源
+[china-city-data](http://dai-siki.github.io/vue-city-picker/example/demo.html).
+
+当然你可以使用自己的数据，格式与此相符即可，该组件最终需要的是一个名为“CITY_PICKER_LIST”的全局变量。
+
 
 ## 安装
 
 #### npm
 
 ```shell
-$ npm install vue-city-picker
+$ npm install vue-city-picker china-city-data
 ```
 
 ## 使用
@@ -51,26 +56,13 @@ $ npm install vue-city-picker
 ```html
 
 <div id="app">
-	<label for="city">选择购车城市</label>
-	<city-picker field="city" placeholder="选择日期" :value.sync="cityId"></city-picker>
+	<label for="city">出发城市</label>
+	<city-picker field="city" placeholder="选择您的出发城市" :value.sync="cityId"></city-picker>
 </div>
 
 <script>
-/**
- * 引入城市列表，格式：
- * {
- * 		//热门
- * 		hot:[
- * 			{id:1, name:'北京'}
- * 		],
- * 		A:[
- * 			{id:2, name:'澳门'}
- * 		]
- * 	}
- */
-import cityList from 'vue-city-picker/json/city-picker-list.json';
-//因为使用了es6的一些方法，需要babel垫片，如果你项目中已有相关兼容性方案，可忽略
-import 'babel-polyfill';
+import 'babel-polyfill'; //因为使用了es6的一些方法，需要babel垫片，如果你项目中已有相关兼容性方案，可忽略
+import cityList from 'china-city-data';
 import Vue from 'vue';
 import myCityPicker from 'vue-city-picker';
 
