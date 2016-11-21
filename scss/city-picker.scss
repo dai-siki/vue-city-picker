@@ -7,7 +7,7 @@ $c1: #d0000e;
 	margin: 0;
 	padding: 0;
 	font: 12px/1.5 'Microsoft YaHei',tahoma,arial,'Hiragino Sans GB','\\5b8b\4f53',sans-serif;
-	color: #666;
+	color: #555;
 
 	* {
 		margin: 0;
@@ -36,7 +36,7 @@ $c1: #d0000e;
 		padding: 12px 10px 0;
 		width: 360px;
 		border: 1px solid $grey1;
-		box-shadow: 0 0 10px 0 $grey1;
+		box-shadow: 2px 2px 4px 0 #e5e5e5;
 		overflow: hidden;
 		background-color: #FFF;
 
@@ -103,20 +103,22 @@ $c1: #d0000e;
 
 					li {
 						float: left;
-						width: 64px;
+						width: 60px;
+						padding-left: 4px;
 						cursor: pointer;
 						overflow: hidden;
 						text-overflow: ellipsis;
 						white-space: nowrap;
 
 						&:hover {
+							background-color: $grey2;
 							color: $c1;
 						}
 					}
 				}
 
 				&:last-child {
-					padding-left: 5px;
+					padding-left: 10px;
 
 					ul {
 						li {

@@ -1,6 +1,6 @@
 {
   "name": "vue-city-picker",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "vue城市选择组件（按城市首字母排序）",
   "main": "city-picker.vue",
   "scripts": {
