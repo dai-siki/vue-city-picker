@@ -1,7 +1,7 @@
 <template>
 	<div class="vue-city-picker" @mouseout="endChoice" @mouseover="startMouseOver">
 		<input type="text" autocomplete="off" disableautocomplete :name="field" :id="field" :value="currCityName" :placeholder="placeholder" @click="startChoice"
-		@keypress="startChoice">
+		@keypress="startChoice" @blur="endChoice" v-el:input>
 		<!--城市选择-->
 		<div class="vcp-panel" v-show="cityPanelIsShow">
 			<h5>城市选择</h5>
@@ -105,11 +105,14 @@ export default {
 			this.immEndChoice();
 		},
 		// 鼠标离开城市选择区域时超过一定时间，关闭城市面板
-		endChoice() {
-			let that = this;
-			that.isMouseOver = false;
+		endChoice(e) {
+			let that = this,
+				inputEle = that.$els.input;
+			if(e.type == 'mouseout') {
+				that.isMouseOver = false;
+			}
 			setTimeout(function() {
-				if (!that.isMouseOver) {
+				if (!that.isMouseOver && inputEle != document.activeElement) {
 					that.cityPanelIsShow = false;
 				}
 			}, 1000);
