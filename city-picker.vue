@@ -115,7 +115,7 @@ export default {
 				if (!that.isMouseOver && inputEle != document.activeElement) {
 					that.cityPanelIsShow = false;
 				}
-			}, 1000);
+			}, 300);
 		},
 		startMouseOver() {
 			this.isMouseOver = true;

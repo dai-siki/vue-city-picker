@@ -2,6 +2,18 @@ $grey1: #DDD;
 $grey2: #f2f2f3;
 $c1: #d0000e;
 
+@keyframes vueCityPicker {
+	0% {
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0) scale(1);
+	}
+}
+
 .vue-city-picker {
 	position: relative;
 	margin: 0;
@@ -36,9 +48,10 @@ $c1: #d0000e;
 		padding: 12px 10px 0;
 		width: 360px;
 		border: 1px solid $grey1;
-		box-shadow: 2px 2px 4px 0 #e5e5e5;
+		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.18);
 		overflow: hidden;
 		background-color: #FFF;
+		animation: vueCityPicker 0.1s ease-out;
 
 		h5 {
 			margin-bottom: 5px;
