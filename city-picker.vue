@@ -1,7 +1,7 @@
 <template>
 	<div class="vue-city-picker" @mouseout="endChoice" @mouseover="startMouseOver">
-		<input type="text" autocomplete="off" disableautocomplete :name="field" :id="field" :value="currCityName" :placeholder="placeholder" @click="startChoice"
-		@keypress="startChoice" @blur="endChoice" v-el:input>
+		<input type="text" autocomplete="off" disableautocomplete :name="field" :id="field" :value="currCityName" :placeholder="placeholder"
+			@focus="startChoice" @keypress="startChoice" @blur="endChoice" v-el:input>
 		<!--城市选择-->
 		<div class="vcp-panel" v-show="cityPanelIsShow">
 			<h5>城市选择</h5>
