@@ -49,6 +49,8 @@ $ npm install vue-city-picker china-city-data
 | value             | String            | ""               | 要双向绑定的城市Id                |
 | field             | String            | ""               | 会给input标签添加name及id属性                   |
 | placeholder       | String            | ""               | 你懂的                                     |
+| no-hot       | Boolean            | false               | 没有‘热门城市’                                     |
+| city-list       | Object            | window.CITY_PICKER_LIST               | 可以自定义城市列表                                     |
 
 
 #### 示例(vue@1.0+)
