@@ -27,7 +27,7 @@ vue城市选择组件（按城市首字母排序）
 ## 城市列表数据源
 [china-city-data](https://github.com/dai-siki/china-city-data).
 
-当然你可以使用自己的数据，格式与此相符即可，该组件最终需要的是一个名为“CITY_PICKER_LIST”的全局变量。
+当然你可以使用自己的数据，格式与此相符即可
 
 
 ## 安装
@@ -59,7 +59,7 @@ $ npm install vue-city-picker china-city-data
 
 <div id="app">
 	<label for="city">出发城市</label>
-	<city-picker field="city" placeholder="选择您的出发城市" :value.sync="cityId"></city-picker>
+	<city-picker field="city" placeholder="选择您的出发城市" :city-list="cityList" :no-hot="true" :value.sync="cityId"></city-picker>
 </div>
 
 <script>
@@ -68,13 +68,14 @@ import cityList from 'china-city-data';
 import Vue from 'vue';
 import myCityPicker from 'vue-city-picker';
 
-//注册一个城市列表全局变量（考虑到cityList会比较大，如项目中多次使用，单独为一个js文件比较好）
+//默认值，可以注册一个城市列表全局变量（考虑到cityList会比较大，如项目中多次使用，单独为一个js文件比较好）
 window.CITY_PICKER_LIST = cityList;
 
 new Vue({
 	el: '#app',
 	data: {
-		cityId: ''
+		cityId: '',
+		cityList
 	},
 	components: {
 		'city-picker': myCityPicker

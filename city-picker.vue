@@ -44,7 +44,9 @@ export default {
 		// 城市列表
 		cityList: {
 			type: Object,
-			default: window.CITY_PICKER_LIST || {}
+			default: function () {
+				return window.CITY_PICKER_LIST || {};
+			}
 		},
 		// 没有热门城市
 		noHot: {
