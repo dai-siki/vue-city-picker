@@ -8,7 +8,7 @@
 			<li :class="{'z-on': item==tagKey}" v-for="item in tagsArr" @click="choiceTag(item)">{{ item }}</li>
 		</ul>
 		<div class="vcp-list">
-			<div v-for="(initial, citys) in cityList" v-show="currTagIncludes(initial)">
+			<div :class="{'z-hot': initial == 'hot'}" v-for="(initial, citys) in cityList" v-show="currTagIncludes(initial)">
 				<h6 v-if="initial != 'hot'">{{ initial }}</h6>
 				<ul>
 					<li v-for="v in citys" @click="choiceCity(v.id)" :title="v.name">{{ v.name }}</li>
